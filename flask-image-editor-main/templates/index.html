@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Converter - Edit your Images Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark gray text */
+            padding-top: 60px; /* Padding to accommodate navbar */
+            background-image: url('static/cam.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 30px;
+            color: white; /* Primary blue color */
+            
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        select.form-select {
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color:rgba(136, 156, 169, 0.276); /* Primary blue navbar */
+        }
+
+        .navbar-brand {
+            color: #fff; /* White navbar text */
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff; /* White navbar links */
+        }
+
+        .btn-outline-success {
+            color: #28a745; /* Green button text */
+            border-color: #28a745; /* Green button border color */
+        }
+
+        .btn-outline-success:hover {
+            color: #fff; /* White button text on hover */
+            background-color: #28a745; /* Green button background on hover */
+            border-color: #28a745; /* Green button border on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Image Converter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Tell your experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/submissions">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <button class="btn btn-outline-success mx-1" type="submit">Login</button>
+                    <button class="btn btn-outline-success mx-1" type="submit">Signup</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h1>Convert your Image Online</h1>
+        <form action="/edit" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Select an Image to Edit</label>
+                <input class="form-control" type="file" name="file" id="formFile">
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <select name="operation" class="form-select" id="floatingSelect" aria-label="Select an Editing Operation">
+                        <option selected>Choose an Operation</option>
+                        <option value="cpng">Convert to PNG</option>
+                        <option value="cgray">Convert to Grayscale</option>
+                        <option value="cwebp">Convert to Webp</option>
+                        <option value="cjpg">Convert to JPG</option>
+                    </select>
+                    <label for="floatingSelect">Select an Editing Operation</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
